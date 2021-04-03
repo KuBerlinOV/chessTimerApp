@@ -2,13 +2,13 @@
 
 const timeWhite = document.querySelector('.time-w');
 const plwBtn = document.querySelector('.plw-btn')
-let timeSetWhite = 0;
+let timeSetWhite = 180;
 
 //blacks
 
 const timeBlack = document.querySelector('.time-b');
-const plbBtn = document.querySelector('plb-btn')
-let timeSetBlack = 0;
+const plbBtn = document.querySelector('.plb-btn')
+let timeSetBlack = 180;
 
 //select timer
 
@@ -38,49 +38,57 @@ const setGameType = (type) => {
     }
 }
 
-// const countDown = setInterval(() => {
-//     timeSetWhite--;
-//     displayTime(timeSetWhite)
-//     if (timeSetWhite <= 0) clearInterval(countDown)
-// }, 1000)
 
-const displayTime = (time) => {
+const displayTime = (timeLeft, timeDis) => {
     // const hours = Math.floor(time/60)
-    const min = Math.floor(time / 60)
-    const sec = Math.floor(time % 60)
-    timeWhite.innerHTML = `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`
+    const min = Math.floor(timeLeft / 60)
+    const sec = Math.floor(timeLeft % 60)
+    timeDis.innerHTML = `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`
 }
 
 
-// Timer
+// Timer whites
 
-const timerFunc = () => {
+const timerWhite = () => {
     timeSetWhite--;
-    displayTime(timeSetWhite)
+    displayTime(timeSetWhite, timeWhite)
 }
 
+// Timer blacks
+
+const timerBlack = () => {
+    timeSetBlack--;
+    displayTime(timeSetBlack, timeBlack)
+}
 
 // buttons 
 
 let count = false;
+let intervalW = null;
+
+let intervalB = null;
+
+//
 
 plwBtn.addEventListener('click', () => {
-    let countDown = setInterval(() => {
-        if (timeSetWhite <= 0 || count === false) {
-            clearInterval(countDown)
-        }
-        timeSetWhite--;
-        displayTime(timeSetWhite)
-    }, 1000);
     if (count === false) {
+        intervalW = setInterval(timerWhite, 1000)
         count = true;
     } else {
         count = false;
+        clearInterval(intervalW)
     }
 })
 
 
+plbBtn.addEventListener('click', () => {
+    if (count === false) {
+        intervalB = setInterval(timerBlack, 1000)
+        count = true;
+    } else {
+        count = false;
+        clearInterval(intervalB)
+    }
+})
 
-// find the solution for pause interval. 
-//You can save it to variable and display this variable while stopped, 
-//then started again, start with the number in variable   
+
