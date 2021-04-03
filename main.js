@@ -13,6 +13,7 @@ let timeSetBlack = 0;
 //select timer
 
 const gameSelector = document.querySelector('#gm-selector')
+
 //set timer
 
 gameSelector.addEventListener('change', (event) => {
@@ -49,29 +50,35 @@ const displayTime = (time) => {
     const sec = Math.floor(time % 60)
     timeWhite.innerHTML = `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`
 }
-const countDown = () => setInterval(() => {
+
+
+// Timer
+
+const timerFunc = () => {
     timeSetWhite--;
     displayTime(timeSetWhite)
-    if (timeSetWhite <= 0) clearInterval(stopTime)
-}, 1000)
+}
 
-
-const stopTime = countDown();
-
-let count = false;
 
 // buttons 
 
+let count = false;
+
 plwBtn.addEventListener('click', () => {
-    if (!count) {
+    let countDown = setInterval(() => {
+        if (timeSetWhite <= 0 || count === false) {
+            clearInterval(countDown)
+        }
+        timeSetWhite--;
+        displayTime(timeSetWhite)
+    }, 1000);
+    if (count === false) {
         count = true;
-        countDown();
     } else {
         count = false;
-        clearInterval(stopTime);
     }
-
 })
+
 
 
 // find the solution for pause interval. 
