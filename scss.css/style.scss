@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+main{
+    font-size: 15px;
+    .tm-board{
+        margin-top: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .tm-clocks{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: space-around;
+            .tm-white{
+                display: flex;
+                flex-direction: row;
+                margin: 0 1em;
+            }
+            .tm-black{
+                display: flex;
+                flex-direction: row;
+                margin: 0 1em;
+            }
+            h3{
+                margin: 0 0.5em;
+            }
+        }
+        .reset-btn{
+            display: block;
+        }
+    }
+}
