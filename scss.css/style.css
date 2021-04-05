@@ -1,17 +1,53 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+}
+
+body#bg-img {
+  width: 100%;
+  height: 100vh;
+  background: url("../images/background-img.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: fixed;
+}
+
+body#bg-img::after {
+  content: '';
+  position: fixed;
+  background: rgba(168, 158, 158, 0.8);
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 main {
   font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+  color: white;
+  width: 100%;
 }
 
 main .tm-board {
-  margin-top: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 50vh;
+  width: 60%;
+  background-color: white;
+  border-radius: 2em;
 }
 
 main .tm-board .tm-clocks {
@@ -25,12 +61,19 @@ main .tm-board .tm-clocks .tm-white {
   display: flex;
   flex-direction: row;
   margin: 0 1em;
+  width: 50%;
+  height: auto;
+  color: black;
 }
 
 main .tm-board .tm-clocks .tm-black {
   display: flex;
   flex-direction: row;
   margin: 0 1em;
+  background-color: black;
+  color: white;
+  width: 50%;
+  height: auto;
 }
 
 main .tm-board .tm-clocks h3 {

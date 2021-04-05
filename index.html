@@ -9,8 +9,19 @@
     <link rel="stylesheet" href="./scss.css/style.css">
 </head>
 
-<body>
+<body id="bg-img">
     <main>
+        <h1 class="lg-heading">
+            Chess Clock
+        </h1>
+        <h2 class="md-heading">Choose your fast chess game type:</h2>
+        <select name="gm-selector" id="gm-selector" class="gm-set">
+            <option selected id="bullet" value="bullet" class="bullet">Bullet</option>
+            <option value="blitz" class="blitz">Blitz</option>
+            <option value="rapid" class="rapid">Rapid</option>
+            <option value="armageddon" class="half-h">Armageddon</option>
+            <option value="set-ind">Set Individual Timer</option>
+        </select>
         <div class="tm-board">
             <div class="tm-clocks">
                 <div class="tm-white">
@@ -20,16 +31,6 @@
                     <h3 class="time-b">03:00</h3>
                 </div>
             </div>
-            <h1 class="lg-heading">
-
-            </h1>
-            <select name="gm-selector" id="gm-selector" class="gm-set">
-                <option selected id="bullet" value="bullet" class="bullet">Bullet</option>
-                <option value="blitz" class="blitz">Blitz</option>
-                <option value="rapid" class="rapid">Rapid</option>
-                <option value="Armageddon" class="half-h">Armageddon</option>
-                <option value="">Set Individual Timer</option>
-            </select>
             <div class="buttons">
                 <button class="plw-btn">
                     White
