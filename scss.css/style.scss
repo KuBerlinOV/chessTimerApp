@@ -41,44 +41,100 @@ main{
     color: $primary-color;
     width: 100%;
 
+    //select element
+    .gm-set{
+        width: 50%;
+        text-align-last: center;
+        font-size: 1em;
+        font-weight: 700;
+        border-radius: 1em;
+        height: 2em;
+        outline: none;
+    }
+
     //time board 
     .tm-board{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         height: 50vh;
-        width: 60%;
+        width: 50%;
         background-color: $primary-color;
         border-radius: 2em;
-        .tm-clocks{
+        .bw-boards{
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
-            align-items: space-around;
-            .tm-white{
+            flex-grow: 100;
+            width: 100%;
+            padding: 0;
+            h3{
+                margin: 0;
+                text-align: center;
+                font-size: 1.5em;
+                font-weight: 700;
+            }
+
+            //whites clock 
+            .board-white{
                 display: flex;
-                flex-direction: row;
-                margin: 0 1em;
+                flex-direction: column;
+                justify-content: space-around;
+                margin: 0;
                 width: 50%;
-                height: auto;
                 color: $secondary-color;
             }
-            .tm-black{
+
+            //blacks clock
+            .board-black{
                 display: flex;
-                flex-direction: row;
-                margin: 0 1em;
+                flex-direction: column;
+                justify-content: space-around;
+                margin: 0;
                 background-color: $secondary-color;
                 color: $primary-color;
                 width: 50%;
-                height: auto;
-            }
-            h3{
-                margin: 0 0.5em;
+                border-top-right-radius: 2em;
             }
         }
+        }
+
+        //buttons
+        button{
+            border: none;
+        }
+
+        .plw-btn{
+            background: $primary-color;
+            outline: none;
+            &:hover{
+                background: $secondary-color;
+            }
+        }
+
+        .plb-btn{
+            background: $secondary-color;
+            outline: none;
+            &:hover{
+                background: $primary-color;
+            }
+        }
+
         .reset-btn{
-            display: block;
+            .reset-btn-half{
+                color: $primary-color;
+            }
+            width: 100%;
+            align-self: end;
+            padding: 1em 0 1em 0;
+            background: linear-gradient(to right, $secondary-color 50%, $primary-color 50%);
+            border-bottom-left-radius: 1.5em;
+            border-bottom-right-radius: 1.5em;
+            font-size: 1.3em;
+            font-weight: 800;
+            outline: none;
+            &:hover{
+                background: $hover-color;
+            }
         }
-    }
 }

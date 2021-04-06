@@ -39,48 +39,101 @@ main {
   width: 100%;
 }
 
+main .gm-set {
+  width: 50%;
+  text-align-last: center;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 1em;
+  height: 2em;
+  outline: none;
+}
+
 main .tm-board {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 50vh;
-  width: 60%;
+  width: 50%;
   background-color: white;
   border-radius: 2em;
 }
 
-main .tm-board .tm-clocks {
+main .tm-board .bw-boards {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: space-around;
+  flex-grow: 100;
+  width: 100%;
+  padding: 0;
 }
 
-main .tm-board .tm-clocks .tm-white {
+main .tm-board .bw-boards h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+main .tm-board .bw-boards .board-white {
   display: flex;
-  flex-direction: row;
-  margin: 0 1em;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
   width: 50%;
-  height: auto;
   color: black;
 }
 
-main .tm-board .tm-clocks .tm-black {
+main .tm-board .bw-boards .board-black {
   display: flex;
-  flex-direction: row;
-  margin: 0 1em;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
   background-color: black;
   color: white;
   width: 50%;
-  height: auto;
+  border-top-right-radius: 2em;
 }
 
-main .tm-board .tm-clocks h3 {
-  margin: 0 0.5em;
+main button {
+  border: none;
 }
 
-main .tm-board .reset-btn {
-  display: block;
+main .plw-btn {
+  background: white;
+  outline: none;
+}
+
+main .plw-btn:hover {
+  background: black;
+}
+
+main .plb-btn {
+  background: black;
+  outline: none;
+}
+
+main .plb-btn:hover {
+  background: white;
+}
+
+main .reset-btn {
+  width: 100%;
+  align-self: end;
+  padding: 1em 0 1em 0;
+  background: linear-gradient(to right, black 50%, white 50%);
+  border-bottom-left-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
+  font-size: 1.3em;
+  font-weight: 800;
+  outline: none;
+}
+
+main .reset-btn .reset-btn-half {
+  color: white;
+}
+
+main .reset-btn:hover {
+  background: #c7c718;
 }
 /*# sourceMappingURL=style.css.map */
